@@ -1,0 +1,83 @@
+;; -*- mode: emacs-lisp; coding: emacs-mule; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Thu Feb 25 13:37:10 2010
+;; Desktop file format version 206
+;; Emacs version 23.1.1
+
+;; Global section:
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring nil)
+(setq regexp-search-ring nil)
+(setq register-alist '((114 file . "/home/dave/.emacs.d/starter-kit-registers.el") (98 file . "/home/dave/.emacs.d/starter-kit-bindings.el") (105 file . "/home/dave/.emacs.d/init.el")))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 206
+  "/home/dave/.emacs.d/dave.el"
+  "dave.el"
+  'emacs-lisp-mode
+  '(auto-fill-mode yas/minor-mode paredit-mode eldoc-mode hi-lock-mode)
+  113
+  '(42 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . utf-8-unix) (column-number-mode . t)))
+
+(desktop-create-buffer 206
+  "/home/dave/.bashrc"
+  ".bashrc"
+  'sh-mode
+  nil
+  3347
+  '(3318 nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/dave/dev/betty/spec/sync_spec.rb"
+  "sync_spec.rb"
+  'ruby-mode
+  '(auto-fill-mode yas/minor-mode flymake-mode rspec-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos) (column-number-mode . t)))
+
+(desktop-create-buffer 206
+  "/home/dave/dev/betty/betty_spec.rb"
+  "betty_spec.rb"
+  'ruby-mode
+  '(auto-fill-mode yas/minor-mode flymake-mode rspec-mode hi-lock-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (column-number-mode . t)))
+
+(desktop-create-buffer 206
+  "/home/dave/dev/betty/.gitignore"
+  ".gitignore"
+  'fundamental-mode
+  nil
+  33
+  '(nil nil)
+  nil
+  nil
+  '((buffer-file-coding-system . undecided-unix)))
+
+(desktop-create-buffer 206
+  "/home/dave/dev/betty/betty.rb"
+  "betty.rb"
+  'ruby-mode
+  '(auto-fill-mode yas/minor-mode flymake-mode hi-lock-mode)
+  1
+  '(nil nil)
+  nil
+  nil
+  '((indent-tabs-mode) (buffer-file-coding-system . undecided-dos) (column-number-mode . t)))
+
