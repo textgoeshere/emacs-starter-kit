@@ -92,3 +92,38 @@
 
 (global-set-key (kbd "C-c C-d") 'duplicate-line)
 
+;; yasnippet
+(setq yas/root-directory "~/.emacs.d/dave/snippets")
+(yas/load-directory yas/root-directory)
+
+(load-library (concat yas/root-directory "/yasnippets-rspec/setup.el"))
+
+(defun bf-pretty-print-xml-region (begin end)
+  "Pretty format XML markup in region. You need to have nxml-mode
+http://www.emacswiki.org/cgi-bin/wiki/NxmlMode installed to do
+this.  The function inserts linebreaks to separate tags that have
+nothing but whitespace between them.  It then indents the markup
+by using nxml's indentation rules."
+  (interactive "r")
+  (save-excursion
+      (nxml-mode)
+      (goto-char begin)
+      (while (search-forward-regexp "\>[ \\t]*\<" nil t) 
+        (backward-char) (insert "\n"))
+      (indent-region begin end)
+      (delete-trailing-whitespace) )
+    (message "Ah, much better!"))
+
+
+;; jekyll
+(require 'jekyll)
+
+(setq jekyll-directory "/home/dave/dev/kapoq-www")
+(global-set-key (kbd "C-c b n") 'jekyll-draft-post)
+(global-set-key (kbd "C-c b P") 'jekyll-publish-post)
+(global-set-key (kbd "C-c b p") (lambda () 
+                                  (interactive)
+                                  (find-file "~/Sources/blog/_posts/")))
+(global-set-key (kbd "C-c b d") (lambda () 
+                                  (interactive)
+                                  (find-file "~/Sources/blog/_drafts/")))
