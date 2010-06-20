@@ -1,0 +1,3 @@
+[submodule "rspec-mode"]
+	path = dave/rspec-mode
+	url = http://github.com/textgoeshere/rspec-mode.git
