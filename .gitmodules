@@ -1,3 +1,6 @@
 [submodule "rspec-mode"]
 	path = dave/rspec-mode
 	url = http://github.com/textgoeshere/rspec-mode.git
+[submodule "dave/snippets/yasnippets-rspec"]
+	path = dave/snippets/yasnippets-rspec
+	url = http://github.com/mknittig/yasnippets-rspec.git
