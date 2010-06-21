@@ -1,0 +1,24 @@
+(custom-set-variables
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ )
+(custom-set-faces
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
+ '(default ((t (:stipple nil :background "black" :foreground "#F8F8F8" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "Consolas"))))
+ '(font-lock-comment-face ((((class color) (min-colors 88) (background dark)) (:foreground "dimgray" :slant italic))))
+ '(font-lock-constant-face ((((class color) (min-colors 88) (background dark)) (:foreground "SkyBlue1"))))
+ '(font-lock-function-name-face ((((class color) (min-colors 88) (background dark)) (:foreground "White"))))
+ '(font-lock-keyword-face ((((class color) (min-colors 88) (background dark)) (:foreground "DarkGoldenrod" :weight ultra-bold))))
+ '(font-lock-string-face ((((class color) (min-colors 88) (background dark)) (:foreground "Tan" :slant italic))))
+ '(font-lock-type-face ((((class color) (min-colors 88) (background dark)) (:foreground "DarkSeaGreen1"))))
+ '(font-lock-variable-name-face ((((class color) (min-colors 88) (background dark)) (:foreground "DeepPink3"))))
+ '(highlight ((((class color) (min-colors 88) (background dark)) (:background "blue4"))))
+ '(link-visited ((default (:inherit link)) (((class color) (background dark)) (:foreground "darkgrey"))))
+ '(mumamo-background-chunk-submode1 ((((class color) (min-colors 88) (background dark)) (:background "grey12"))))
+ '(region ((((class color) (min-colors 88) (background dark)) (:background "blue2")))))
+
