@@ -18,7 +18,7 @@
 (require 'compile)
 (require 'thingatpt)
  
-(defvar ack-command "ack" "The command run by the ack function.")
+(defvar ack-command "ack-grep" "The command run by the ack function.")
  
 (defvar ack-mode-font-lock-keywords
   '(("^\\(Compilation\\|Ack\\) started.*"
