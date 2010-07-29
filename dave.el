@@ -5,21 +5,13 @@
 (autoload 'ansi-color-for-comint-mode-on "ansi-color" nil t)
 (add-hook 'shell-mode-hook 'ansi-color-for-comint-mode-on)
 
-
-(require 'buffer-stack)
-(global-set-key [(f9)] 'buffer-stack-track)
-(global-set-key [(control f9)] 'buffer-stack-untrack)
-(global-set-key [(control tab)] 'buffer-stack-up)
-(global-set-key [(control shift tab)] 'buffer-stack-down)
-(global-set-key [(f12)] 'buffer-stack-bury)
-(global-set-key [(control f12)] 'buffer-stack-bury-and-kill)
-
 ;;(require 'rinari)
 ;;(setq rinari-tags-file-name "TAGS")
 
 (require 'rspec-mode)
-
 (require 'autotest)
+
+
 
 (defun toggle-fullscreen ()
   (interactive)
@@ -28,6 +20,8 @@
   (x-send-client-message nil 0 nil "_NET_WM_STATE" 32
 	    		 '(2 "_NET_WM_STATE_MAXIMIZED_HORZ" 0)))
 (toggle-fullscreen)
+
+
 
 (defun move-line-down ()
   (interactive)
@@ -46,8 +40,7 @@
       (transpose-lines -1))
     (move-to-column col)))
 
-(global-set-key [(control shift down)] 'move-line-down)
-(global-set-key [(control shift up)] 'move-line-up)
+
 
 (defadvice find-file-at-point (around goto-line compile activate)
   (let ((line (and (looking-at ".*:\\([0-9]+\\)")
@@ -90,13 +83,14 @@
   ;; put the point in the lowest line and return
   (next-line arg))
 
-(global-set-key (kbd "C-c C-d") 'duplicate-line)
+
 
 ;; yasnippet
 (setq yas/root-directory "~/.emacs.d/dave/snippets")
 (yas/load-directory yas/root-directory)
-
 (load-library (concat yas/root-directory "/yasnippets-rspec/setup.el"))
+
+
 
 (defun bf-pretty-print-xml-region (begin end)
   "Pretty format XML markup in region. You need to have nxml-mode
@@ -115,10 +109,39 @@ by using nxml's indentation rules."
     (message "Ah, much better!"))
 
 
+
 ;; jekyll
 (require 'jekyll)
-
 (setq jekyll-directory "/home/dave/dev/kapoq-www")
+
+
+
+;; M-( may insert a space before the open parenthesis, depending on
+;; the syntax class or the preceding character. Set
+;; parens-dont-require-spaces to a non-nil value if you wish to
+;; inhibit this.
+(setq parens-dont-require-spaces t)
+
+
+
+;; DiredOmitMode
+;; lets you hide uninteresting files, such as backup files and AutoSave files, from the DiredMode view.
+;; It is defined in the Dired X package, so you must also arrange to load that
+;; ‘M-o’ in Dired buffers will toggle hiding of files. Variables ‘dired-omit-files’ (note: no ‘-p’ at end) and ‘dired-omit-extensions’ together define the uninteresting files.
+;; With most recent Emacs versions (e.g. 23.1.92.1) no hooks are needed and the following lines in your .emacs enable omit mode (in this example “dot” files are omitted):
+(require 'dired-x)
+(setq dired-omit-files-p t)
+
+
+
+;; My own custom keys
+(global-set-key (kbd "<f9>") 'ack)
+
+(global-set-key (kbd "C-c C-d") 'duplicate-line)
+
+(global-set-key [(control shift down)] 'move-line-down)
+(global-set-key [(control shift up)] 'move-line-up)
+
 (global-set-key (kbd "C-c b n") 'jekyll-draft-post)
 (global-set-key (kbd "C-c b P") 'jekyll-publish-post)
 (global-set-key (kbd "C-c b p") (lambda () 
@@ -127,3 +150,4 @@ by using nxml's indentation rules."
 (global-set-key (kbd "C-c b d") (lambda () 
                                   (interactive)
                                   (find-file "~/Sources/blog/_drafts/")))
+
