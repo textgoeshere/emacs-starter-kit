@@ -151,3 +151,8 @@ by using nxml's indentation rules."
                                   (interactive)
                                   (find-file "~/Sources/blog/_drafts/")))
 
+
+(load "/home/dave/.emacs.d/dave/rirc.el")
+
+(require 'rdebug)
+
