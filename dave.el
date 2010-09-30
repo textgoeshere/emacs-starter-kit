@@ -152,7 +152,13 @@ by using nxml's indentation rules."
                                   (find-file "~/Sources/blog/_drafts/")))
 
 
-(load "/home/dave/.emacs.d/dave/rirc.el")
+;; rcirc
+(load "/home/dave/.emacs.d/dave/rcirc.el")
 
+;; rdebug
 (require 'rdebug)
+
+;; yaml
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml$" . yaml-mode))
 
