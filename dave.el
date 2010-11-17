@@ -85,6 +85,22 @@
 
 
 
+;; Delete file and buffer
+;; http://blog.tuxicity.se/elisp/emacs/2010/11/16/delete-file-and-buffer-in-emacs.html
+(defun delete-this-buffer-and-file ()
+  "Removes file connected to current buffer and kills buffer."
+  (interactive)
+  (let ((filename (buffer-file-name))
+        (buffer (current-buffer))
+        (name (buffer-name)))
+    (if (not (and filename (file-exists-p filename)))
+        (error "Buffer '%s' is not visiting a file!" name)
+      (when (yes-or-no-p "Are you sure you want to remove this file? ")
+        (delete-file filename)
+        (kill-buffer buffer)
+        (message "File '%s' successfully removed" filename)))))
+
+
 ;; yasnippet
 (setq yas/root-directory "~/.emacs.d/dave/snippets")
 (yas/load-directory yas/root-directory)
@@ -132,6 +148,8 @@ by using nxml's indentation rules."
 (require 'dired-x)
 (setq dired-omit-files-p t)
 
+;; If you don’t want your buffer list cluttering up with dired buffers then put the following in your .emacs:
+(define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file)
 
 
 ;; My own custom keys
@@ -151,6 +169,10 @@ by using nxml's indentation rules."
                                   (interactive)
                                   (find-file "~/Sources/blog/_drafts/")))
 
+
+(global-set-key (kbd "C-#") 'comment-or-uncomment-region)
+
+(global-set-key (kbd "C-c f") 'replace-regexp)
 
 ;; rcirc
 (load "/home/dave/.emacs.d/dave/rcirc.el")
