@@ -100,13 +100,8 @@
         (kill-buffer buffer)
         (message "File '%s' successfully removed" filename)))))
 
-
 ;; yasnippet
 (setq yas/root-directory "~/.emacs.d/dave/snippets")
-(yas/load-directory yas/root-directory)
-(load-library (concat yas/root-directory "/yasnippets-rspec/setup.el"))
-
-
 
 (defun bf-pretty-print-xml-region (begin end)
   "Pretty format XML markup in region. You need to have nxml-mode
@@ -175,7 +170,9 @@ by using nxml's indentation rules."
 (global-set-key (kbd "C-c f") 'replace-regexp)
 
 ;; rcirc
-(load "/home/dave/.emacs.d/dave/rcirc.el")
+(if (file-exists-p "/home/dave/.emacs.d/dave/rcirc.el")
+    (load "/home/dave/.emacs.d/dave/rcirc.el"))
+
 
 ;; rdebug
 (require 'rdebug)
